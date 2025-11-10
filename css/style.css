@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+  overflow: hidden;
+}
+
+/* UI panel */
+#ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #d0d0d0;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+#ui:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Labels and inputs */
+label {
+  font-size: 1rem;
+  color: #374151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="color"], input[type="number"] {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 1rem;
+  width: 90px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="color"]:hover, input[type="number"]:hover {
+  border-color: #ff2fa1;
+}
+
+/* Buttons */
+button {
+  font-family: "Orbitron", sans-serif;
+  background: #000000;
+  color: #eeeeee;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background: #71346c;
+}
+
+#resetCamera {
+  background-color: #a11717;
+    transition-duration: 0.4s;
+}
+
+#resetCamera:hover {
+  background-color: #ce2020;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #ui {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
