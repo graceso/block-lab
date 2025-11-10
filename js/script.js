@@ -103,7 +103,7 @@ document.getElementById('addBrick').onclick = () => {
   if (checkCollision(position, size, null)) {
     let offset = 1;
     let found = false;
-    while (!found && offset < 50) {
+    while (!found && offset < 150) {
       const tryPosX = { x: offset, y: size.y / 2, z: 0 };
       const tryPosZ = { x: 0, y: size.y / 2, z: offset };
       if (!checkCollision(tryPosX, size, null)) {
@@ -116,8 +116,10 @@ document.getElementById('addBrick').onclick = () => {
       offset++;
     }
     if (!found) {
-      alert('oh no, no space available for new brick');
+      document.getElementById('status').textContent = 'oh no, no space available for new brick.';
       return;
+    } else {
+      document.getElementById('status').textContent = '';
     }
   }
 
