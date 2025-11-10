@@ -41,12 +41,12 @@ function checkCollision(newPos, brickSize, ignoreBrick) {
 function createBrick(color, size, position) {
   const brickGroup = new THREE.Group();
   const body = new THREE.Mesh(new THREE.BoxGeometry(size.x, size.y, size.z),
-    new THREE.MeshStandardMaterial({ color, roughness: 0.5, metalness: 0.4 }));
+    new THREE.MeshStandardMaterial({ color, roughness: 0.3, metalness: 0.4}));
   brickGroup.add(body);
 
   // Studs
   const studGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.2, 32);
-  const studMat = new THREE.MeshStandardMaterial({ color, metalness: 0.4 });
+  const studMat = new THREE.MeshStandardMaterial({ color, roughness: 0.3, metalness: 0.4 });
   for (let i = 0; i < size.x; i++) {
     for (let j = 0; j < size.z; j++) {
       const stud = new THREE.Mesh(studGeo, studMat);
