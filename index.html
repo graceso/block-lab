@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>block lab</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div id="ui">
-  <p id="status"></p>
-  <label>brick colour: <input type="color" id="brickColour" value="#ff0000"></label>
-  <label>width (x): <input type="number" id="brickWidth" value="2" min="1" max="8"></label>
-  <label>height (y): <input type="number" id="brickHeight" value="1" min="1" max="4"></label>
-  <label>depth (z): <input type="number" id="brickDepth" value="2" min="1" max="8"></label>
-  <button id="addBrick">add brick</button>
-  <button id="addRandomBrick">add random brick</button>
-  <button id="resetCamera">reset camera</button>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
-<script src="js/script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>block lab</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="ui">
+    <p id="status"></p>
+    <label>brick colour: <input type="color" id="brickColour" value="#ff0000"></label>
+    <label>width (x): <input type="number" id="brickWidth" value="2" min="1" max="8"></label>
+    <label>height (y): <input type="number" id="brickHeight" value="1" min="1" max="4"></label>
+    <label>depth (z): <input type="number" id="brickDepth" value="2" min="1" max="8"></label>
+    <button id="addBrick">add brick</button>
+    <button id="addRandomBrick">add random brick</button>
+    <button id="resetCamera">reset camera</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
