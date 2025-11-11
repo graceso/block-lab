@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A 3D block environment using Three.js">
-  <meta name="keywords" content="Three.js, 3D, blocks, bricks, web development">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A 3D block environment using Three.js" />
+  <meta name="keywords"
+    content="Three.js, 3D, blocks, bricks, web development, interactive, experimental, html, css, javascript" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>block lab</title>
   <link rel="stylesheet" href="css/style.css">
 
@@ -21,16 +24,16 @@
     <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
 
     <label for="brickColour">brick colour:
-    <input type="color" id="brickColour" value="#ff0000" aria-label="Brick colour"></label>
+      <input type="color" id="brickColour" value="#ff0000" aria-label="Brick colour"></label>
 
     <label for="brickWidth">width (x):
-    <input type="number" id="brickWidth" value="2" min="1" max="8"></label>
+      <input type="number" id="brickWidth" value="2" min="1" max="8"></label>
 
     <label for="brickHeight">height (y):
-    <input type="number" id="brickHeight" value="1" min="1" max="4"></label>
+      <input type="number" id="brickHeight" value="1" min="1" max="4"></label>
 
     <label for="brickDepth">depth (z):
-    <input type="number" id="brickDepth" value="2" min="1" max="8"></label>
+      <input type="number" id="brickDepth" value="2" min="1" max="8"></label>
 
     <button id="addBrick" aria-controls="scene">add brick</button>
     <button id="addRandomBrick" aria-controls="scene">add random brick</button>
@@ -38,11 +41,13 @@
   </aside>
 
   <main id="scene" tabindex="0" role="region" aria-label="3D scene" aria-describedby="scene-instructions">
-    <p id="scene-instructions" class="sr-only">Use mouse or keyboard to orbit, pan and zoom the 3D scene. Press the Reset Camera button to return to the default view.</p>
+    <p id="scene-instructions" class="sr-only">Use mouse or keyboard to orbit, pan and zoom the 3D scene. Press the
+      Reset Camera button to return to the default view.</p>
   </main>
 
   <noscript>
-    <p>Your browser does not support JavaScript, which is required to view this 3D scene. Please enable JavaScript and reload the page.</p>
+    <p>Your browser does not support JavaScript, which is required to view this 3D scene. Please enable JavaScript and
+      reload the page.</p>
   </noscript>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
