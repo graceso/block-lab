@@ -126,6 +126,48 @@ document.getElementById('addBrick').onclick = () => {
   createBrick(color, size, position);
 };
 
+// Random brick generation
+function getRandomColour() {
+  return Math.floor(Math.random() * 16777215); // random hex colour
+}
+
+function getRandomSize() {
+  return {
+    x: Math.floor(Math.random() * 4) + 1, // width 1-4
+    y: Math.floor(Math.random() * 3) + 1, // height 1-3
+    z: Math.floor(Math.random() * 4) + 1  // depth 1-4
+  };
+}
+
+function getRandomPosition(size) {
+  return {
+    x: Math.floor(Math.random() * 20) - 10, // random X within grid
+    y: size.y / 2,
+    z: Math.floor(Math.random() * 20) - 10  // random Z within grid
+  };
+}
+
+// Add random brick button logic
+document.getElementById('addRandomBrick').onclick = () => {
+  const color = getRandomColour();
+  const size = getRandomSize();
+  let position = getRandomPosition(size);
+
+  // Collision prevention
+  let attempts = 0;
+  while (checkCollision(position, size, null) && attempts < 150) {
+    position = getRandomPosition(size);
+    attempts++;
+  }
+
+  if (attempts >= 150) {
+    console.warn('cannot place another random brick without overlap.');
+    return;
+  }
+
+  createBrick(color, size, position);
+};
+
 // Camera reset button
 document.getElementById('resetCamera').onclick = () => {
   camera.position.set(12, 12, 12);
