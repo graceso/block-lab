@@ -166,6 +166,10 @@ button:hover {
   background-color: #ce2020;
 }
 
+#webgl-fallback {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   #ui {

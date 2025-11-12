@@ -175,6 +175,50 @@ document.getElementById('resetCamera').onclick = () => {
   controls.update();
 };
 
+// Keyboard camera controls
+const moveSpeed = 0.08; // Adjust for faster/slower movement
+const keysPressed = {};
+
+document.addEventListener('keydown', (event) => {
+  keysPressed[event.key.toLowerCase()] = true;
+});
+
+document.addEventListener('keyup', (event) => {
+  keysPressed[event.key.toLowerCase()] = false;
+});
+
+function updateCameraMovement() {
+  const camera = controls.object;
+
+  if (keysPressed['arrowup'] || keysPressed['w']) {
+    camera.position.z -= moveSpeed;
+  }
+  if (keysPressed['arrowdown'] || keysPressed['s']) {
+    camera.position.z += moveSpeed;
+  }
+  if (keysPressed['arrowleft'] || keysPressed['a']) {
+    camera.position.x -= moveSpeed;
+  }
+  if (keysPressed['arrowright'] || keysPressed['d']) {
+    camera.position.x += moveSpeed;
+  }
+  if (keysPressed['q']) {
+    camera.position.y += moveSpeed;
+  }
+  if (keysPressed['e']) {
+    camera.position.y -= moveSpeed;
+  }
+  if (keysPressed['r']) {
+    controls.reset();
+  }
+
+  controls.update();
+  requestAnimationFrame(updateCameraMovement);
+}
+
+// Start the loop
+updateCameraMovement();
+
 // Render loop
 function animate() {
   requestAnimationFrame(animate);

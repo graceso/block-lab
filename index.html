@@ -15,11 +15,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-  <a href="#scene" class="skip-link">skip to 3D scene</a>
-
+  <header>
+    <a href="#scene" class="skip-link">skip to 3D scene</a>
+  </header>
   <aside id="ui" role="region" aria-label="Controls">
     <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
 
@@ -41,8 +47,21 @@
   </aside>
 
   <main id="scene" tabindex="0" role="region" aria-label="3D scene" aria-describedby="scene-instructions">
-    <p id="scene-instructions" class="sr-only">Use mouse or keyboard to orbit, pan and zoom the 3D scene. Press the
-      Reset Camera button to return to the default view.</p>
+
+    <div id="scene-instructions" class="sr-only">
+      <ul>You can interact with the 3D scene in several ways:
+        <li>Use your computer's mouse to orbit, pan, and zoom around the scene. You can also use keyboard controls: hold W/A/S/D or arrow keys to move smoothly, Q/E to move up/down, and R to reset the camera to default view.</li>
+        <li>Customise your brick before adding it to the scene. Choose a colour and adjust its size using the width,
+          height, and depth inputs.</li>
+        <li>Click on the <strong>Add Brick</strong> button to place a new brick in the scene.</li>
+        <li>Click on the <strong>Add Random Brick</strong> button to place a new randomised brick in the scene.</li>
+        <li>Click on the <strong>Reset Camera</strong> button to return the camera to its default view.</li>
+      </ul>
+    </div>
+
+    <div id="webgl-fallback">
+      <p>Your browser does not support WebGL. Please use a compatible browser.</p>
+    </div>
   </main>
 
   <noscript>
